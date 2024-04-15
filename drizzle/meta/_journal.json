@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1713193347565,
+      "tag": "0000_new_mockingbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1713194291648,
+      "tag": "0001_bright_supreme_intelligence",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1713194473823,
+      "tag": "0002_flat_thunderbolts",
+      "breakpoints": true
+    }
+  ]
+}

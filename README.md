@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Creazione del DB in locale
 
-## Getting Started
+Questo progetto fornisce un'infrastruttura Docker per gestire un database PostgreSQL locale utilizzando PgAdmin come interfaccia di amministrazione.
 
-First, run the development server:
+## Istruzioni per l'uso
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Avvio del database e di PgAdmin**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   Per avviare il database PostgreSQL e PgAdmin, esegui il seguente comando dalla radice del progetto:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```
+   docker-compose up -d
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   Questo avvierà due servizi: uno per il database PostgreSQL e l'altro per PgAdmin.
 
-## Learn More
+2. **Accesso a PgAdmin**
 
-To learn more about Next.js, take a look at the following resources:
+   Una volta che i container sono in esecuzione, puoi accedere a PgAdmin tramite il tuo browser all'indirizzo [http://localhost:5050](http://localhost:5050).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   Utilizza le seguenti credenziali predefinite per accedere a PgAdmin:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   - **Email:** admin@admin.com
+   - **Password:** root
 
-## Deploy on Vercel
+3. **Creazione di un nuovo utente e database nel database**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Dopo aver effettuato l'accesso a PgAdmin, è necessario creare un nuovo utente e un nuovo database all'interno del database PostgreSQL.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Per fare ciò, segui i passaggi seguenti:
+
+   - Accedi all'interno dello shell del container Docker appena creato utilizzando il seguente comando:
+
+     ```
+     docker exec -it postgres_container sh
+     ```
+
+   - Una volta all'interno del container Docker, connettiti al database PostgreSQL utilizzando il comando seguente:
+
+     ```
+     psql postgres
+     ```
+
+   - A questo punto, puoi eseguire i seguenti comandi SQL per creare un nuovo utente e un nuovo database:
+
+     ```sql
+     CREATE USER nome-utente SUPERUSER;
+     CREATE DATABASE threads-clone WITH OWNER nome-utente;
+     ```
+
+     Sostituisci `nome-utente` con il nome desiderato per il nuovo utente e `threads-clone` con il nome del nuovo database.
+
+## Note aggiuntive
+
+- Assicurati di controllare lo stato dei container Docker utilizzando il comando `docker-compose ps`.
+- Per fermare i container, esegui il comando `docker-compose down`.
