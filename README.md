@@ -55,7 +55,8 @@ Questo progetto fornisce un'infrastruttura Docker per gestire un database Postgr
 - Assicurati di controllare lo stato dei container Docker utilizzando il comando `docker-compose ps`.
 - Per fermare i container, esegui il comando `docker-compose down`.
 
-
+&nbsp;
+&nbsp;
 
 # Gestione dell'applicazione
 
