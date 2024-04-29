@@ -54,3 +54,20 @@ Questo progetto fornisce un'infrastruttura Docker per gestire un database Postgr
 
 - Assicurati di controllare lo stato dei container Docker utilizzando il comando `docker-compose ps`.
 - Per fermare i container, esegui il comando `docker-compose down`.
+
+# Gestione dell'applicazione
+
+## Autenticazione 🔒
+
+L'autenticazione dell'applicazione è stata implementata utilizzando Clerk. Clerk semplifica il processo di registrazione, accesso e gestione delle credenziali degli utenti, fornendo una solida base per garantire la sicurezza dell'applicazione.
+Di seguito la documentazione ufficiale di [Clerk](https://clerk.com/docs/quickstarts/nextjs)
+
+## ORM 💾
+
+Per semplificare l'interfacciamento con il db è stato scelto l'ORM Drizzle. Un ORM (Object-Relational Mapping) è un concetto e un'implementazione software che facilita la conversione e l'interazione tra oggetti in un linguaggio di programmazione orientato agli oggetti e le tabelle di un database relazionale.
+Permette agli sviluppatori di lavorare con oggetti nel proprio codice, senza dover scrivere direttamente le query SQL per interagire con il database.
+Di seguito la documentazione ufficiale di [Drizzle](https://orm.drizzle.team/docs/overview)
+
+## Gestione dei form con Formik 🥁
+
+Formik è stato integrato nell'applicazione per semplificare la gestione dei form. Possiamo gestire facilmente la validazione dei campi, la gestione dello stato del form e la sottomissione dei dati in modo intuitivo e senza dover scrivere codice boilerplate ripetitivo.
