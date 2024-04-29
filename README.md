@@ -1,4 +1,4 @@
-# Creazione del DB in locale
+# Creazione del DB in locale ⛷️
 
 Questo progetto fornisce un'infrastruttura Docker per gestire un database PostgreSQL locale utilizzando PgAdmin come interfaccia di amministrazione.
 
@@ -54,6 +54,8 @@ Questo progetto fornisce un'infrastruttura Docker per gestire un database Postgr
 
 - Assicurati di controllare lo stato dei container Docker utilizzando il comando `docker-compose ps`.
 - Per fermare i container, esegui il comando `docker-compose down`.
+
+
 
 # Gestione dell'applicazione
 
