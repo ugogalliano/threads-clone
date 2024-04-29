@@ -1,5 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
+import { dark } from '@clerk/themes';
+import '../globals.css';
 
 /** SEO **/
 export const metadata = {
@@ -17,6 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+      }}
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html>

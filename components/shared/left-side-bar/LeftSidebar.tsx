@@ -1,6 +1,7 @@
 import React from 'react';
-import { sidebarLinks } from '../../constants/index';
+import { sidebarLinks } from '../../../constants/index';
 import MenuItem from './MenuItem';
+import LogoutItem from './LogoutItem';
 
 const LeftSidebat = () => {
   return (
@@ -10,6 +11,7 @@ const LeftSidebat = () => {
           <MenuItem key={link.route} {...link} />
         ))}
       </div>
+      <LogoutItem />
     </section>
   );
 };
