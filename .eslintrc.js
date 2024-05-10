@@ -26,7 +26,12 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint', 'react', 'react-hooks'],
   rules: {
     // JavaScript rules
-    'no-console': 'error',
+    'no-console': [
+      'error',
+      {
+        allow: ['error'],
+      },
+    ],
     'prefer-const': 'warn',
     'no-var': 'warn',
     'object-shorthand': 'warn',

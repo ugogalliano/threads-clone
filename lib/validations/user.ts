@@ -1,7 +1,6 @@
 import * as yup from 'yup';
 
 export const UserValidation = yup.object().shape({
-  profile_photo: yup.string().required(),
   name: yup
     .string()
     .min(3, 'Minimum 3 characters.')

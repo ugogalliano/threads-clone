@@ -1,6 +1,7 @@
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
 import { dark } from '@clerk/themes';
+import { AlertContextProvider } from '@/hooks/alert/Alert';
 import '../globals.css';
 
 /** SEO **/
@@ -25,7 +26,9 @@ export default function RootLayout({
       publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
     >
       <html>
-        <body className={`${inter.className} bg-dark-1`}>{children}</body>
+        <body className={`${inter.className} bg-dark-1`}>
+          <AlertContextProvider>{children}</AlertContextProvider>
+        </body>
       </html>
     </ClerkProvider>
   );

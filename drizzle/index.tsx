@@ -9,4 +9,7 @@ const client = new Client({
 
 client.connect();
 
+// eslint-disable-next-line no-console
+console.log('DRIZZLE IS CONNECTED');
+
 export const db = drizzle(client, { schema });
